@@ -79,16 +79,20 @@
 
 
 
-<meta name="description" content="find a way">
-<meta property="og:type" content="website">
+<meta name="description" content="[TOC] introRef: https://bost.ocks.org/mike/d3/workshop/#1 好用的在线前端实时显示编辑：observable 、codepen HTML 书写pass SVG 书写pass CSS书写pass JavaScript 书写pass D3.js 书写D3.js官网) 当使用额外数据，例如读取数据xxx.csv时，需要在本地启动web server">
+<meta property="og:type" content="article">
 <meta property="og:title" content="find my way">
-<meta property="og:url" content="http://yoursite.com/index.html">
+<meta property="og:url" content="http://yoursite.com/2020/05/16/D3_beginer/index.html">
 <meta property="og:site_name" content="find my way">
-<meta property="og:description" content="find a way">
+<meta property="og:description" content="[TOC] introRef: https://bost.ocks.org/mike/d3/workshop/#1 好用的在线前端实时显示编辑：observable 、codepen HTML 书写pass SVG 书写pass CSS书写pass JavaScript 书写pass D3.js 书写D3.js官网) 当使用额外数据，例如读取数据xxx.csv时，需要在本地启动web server">
 <meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/Users/zhonghaolin/Hexo/source/_posts/image/color_category_d3.png">
+<meta property="og:image" content="http://yoursite.com/Users/zhonghaolin/Hexo/source/_posts/image/d3js_coordinates.png">
+<meta property="og:updated_time" content="2020-05-17T05:00:32.092Z">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:title" content="find my way">
-<meta name="twitter:description" content="find a way">
+<meta name="twitter:description" content="[TOC] introRef: https://bost.ocks.org/mike/d3/workshop/#1 好用的在线前端实时显示编辑：observable 、codepen HTML 书写pass SVG 书写pass CSS书写pass JavaScript 书写pass D3.js 书写D3.js官网) 当使用额外数据，例如读取数据xxx.csv时，需要在本地启动web server">
+<meta name="twitter:image" content="http://yoursite.com/Users/zhonghaolin/Hexo/source/_posts/image/color_category_d3.png">
 
 
 
@@ -118,13 +122,13 @@
 
 
 
-  <link rel="canonical" href="http://yoursite.com/"/>
+  <link rel="canonical" href="http://yoursite.com/2020/05/16/D3_beginer/"/>
 
 
 
 
 
-  <title>find my way</title>
+  <title> | find my way</title>
   
 
 
@@ -143,8 +147,7 @@
     
   
 
-  <div class="container sidebar-position-left 
-  page-home">
+  <div class="container sidebar-position-left page-post-detail">
     <div class="headband"></div>
 
     <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
@@ -217,266 +220,9 @@
         <div class="content-wrap">
           <div id="content" class="content">
             
-  <section id="posts" class="posts-expand">
+
+  <div id="posts" class="posts-expand">
     
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/06/14/毕业论文之数据库设计/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HaolinZhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534345547319&di=b9e880681b19e0cefb3132f38ccb0281&imgtype=0&src=http%3A%2F%2Fimg.duoziwang.com%2F2017%2F09%2F1607450267817.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="find my way">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/06/14/毕业论文之数据库设计/" itemprop="url">未命名</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-06-14T11:47:43+08:00">
-                2020-06-14
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>20200615 记录设计思路</p>
-<p>1.收集已经跑完的几个物种的100条序列，构建数据库；</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span> /home/haolinz/workspace/model_organism/tmp_dir/exist_pro/new_file 蛋白质组中除去预测的蛋白和长度过滤后的蛋白</span><br><span class="line"><span class="meta">#</span> homo_sapiens mus_musculus saccharomyces_cerevisiae escherichia_coli caenorhabditis_elegans</span><br><span class="line"><span class="meta">#</span>for i in homo_sapiens mus_musculus saccharomyces_cerevisiae escherichia_coli caenorhabditis_elegans;do for j in `head -n 10 $i.txt`;do ls ~/workspace/model_organism/$i/output/$j;done;done</span><br><span class="line"><span class="meta">#</span> /home/haolinz/workspace/model_organism/tmp_dir/sample_0615    目的文件夹</span><br><span class="line">for i in homo_sapiens mus_musculus saccharomyces_cerevisiae escherichia_coli ;do mkdir $i;for j in `sed -n 2000,2100p ~/workspace/model_organism/$i/protein.list`;do mkdir $i/$j;cp ~/workspace/model_organism/$i/output/$j/$j.dcd $i/$j;cp ~/workspace/model_organism/$i/output/$j/seq.txt $i/$j;cp ~/workspace/model_organism/$i/output/$j/seq.ss $i/$j;done;done</span><br><span class="line"><span class="meta">#</span> caenorhabditis_elegans</span><br><span class="line">for j in `sed -n 2000,2100p ~/workspace/model_organism/caenorhabditis_elegans/caenorhabditis_elegans.txt`;do mkdir caenorhabditis_elegans/$j;cp ~/workspace/model_organism/caenorhabditis_elegans/output/$j/$j.dcd caenorhabditis_elegans/$j;cp ~/workspace/model_organism/caenorhabditis_elegans/output/$j/seq.txt caenorhabditis_elegans/$j;cp ~/workspace/model_organism/caenorhabditis_elegans/output/$j/seq.ss caenorhabditis_elegans/$j;done</span><br></pre></td></tr></table></figure>
-<p>2.对标数据库Genome3D，对比分析</p>
-<p>All Genome3D data is freely available. Datasets of tar-get protein sequences are available to download via <a href="ftp://orengoftp.biochem.ucl.ac.uk/genome3d" target="_blank" rel="noopener">FTP</a>.</p>
-<p>Genome3D数据统计</p>
-<p>​    物种:Plasmodium falciparum (isolate 3D7), 数:5447, reviewed: 163, unreviewed: 5284</p>
-<p>​    物种:Staphylococcus aureus (strain NCTC 8325), 数:2889, reviewed: 765, unreviewed: 2124</p>
-<p>​    物种:Schizosaccharomyces pombe (strain 972 / ATCC 24843) (Fission yeast), 数:5139, reviewed: 5139, unreviewed: 0</p>
-<p>​    物种:Mycobacterium tuberculosis (strain ATCC 25618 / H37Rv), 数:3984, reviewed: 2168, unreviewed: 1816</p>
-<p>​    物种:Triticum aestivum (Wheat), 数:199889, reviewed: 321, unreviewed: 199568</p>
-<p>​    物种:Sus scrofa (Pig), 数:40525, reviewed: 1246, unreviewed: 39279</p>
-<p>​    物种:Bos taurus (Bovine), 数:23856, reviewed: 5930, unreviewed: 17926</p>
-<table>
-<thead>
-<tr>
-<th>物种</th>
-<th>Proteome</th>
-<th>reviewed</th>
-<th>genome3D 序列数</th>
-<th>reviewed</th>
-<th>unreviewed</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>homo sapiens</td>
-<td>73928</td>
-<td>20350</td>
-<td>20395</td>
-<td>20395</td>
-<td>0</td>
-</tr>
-<tr>
-<td>mus musculus</td>
-<td>55421</td>
-<td>17034</td>
-<td>16953</td>
-<td>16953</td>
-<td>0</td>
-</tr>
-<tr>
-<td>Saccharomyces cerevisiae</td>
-<td>6049</td>
-<td>6049</td>
-<td>6049</td>
-<td>6049</td>
-<td>0</td>
-</tr>
-<tr>
-<td>Escherichia coli</td>
-<td>4391</td>
-<td>4389</td>
-<td>4347</td>
-<td>4347</td>
-<td>0</td>
-</tr>
-<tr>
-<td>Arabidopsis thaliana</td>
-<td>39359</td>
-<td>15877</td>
-<td>37260</td>
-<td>15738</td>
-<td>21522</td>
-</tr>
-<tr>
-<td>Caenorhabditis elegans</td>
-<td>26955</td>
-<td>4128</td>
-<td>26773</td>
-<td>4030</td>
-<td>22743</td>
-</tr>
-<tr>
-<td>Drosophila melanogaster</td>
-<td>21973</td>
-<td>3576</td>
-<td>21899</td>
-<td>3511</td>
-<td>18388</td>
-</tr>
-<tr>
-<td>Danio rerio</td>
-<td>46847</td>
-<td>3152</td>
-<td>0</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>Xenopus laevis</td>
-<td>44571</td>
-<td>39</td>
-<td>0</td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-</tbody>
-</table>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
 
   
 
@@ -506,9 +252,7 @@
 
         
         
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/05/16/D3_beginer/" itemprop="url">未命名</a></h1>
+          <h1 class="post-title" itemprop="name headline"></h1>
         
 
         <div class="post-meta">
@@ -558,9 +302,7 @@
       
 
       
-        
-          
-            <p>[TOC]</p>
+        <p>[TOC]</p>
 <h3 id="intro"><a href="#intro" class="headerlink" title="intro"></a>intro</h3><p>Ref: <a href="https://bost.ocks.org/mike/d3/workshop/#1" target="_blank" rel="noopener">https://bost.ocks.org/mike/d3/workshop/#1</a></p>
 <p>好用的在线前端实时显示编辑：<a href="https://observablehq.com/?utm_source=d3js-org&amp;utm_medium=banner&amp;utm_campaign=try-observable" target="_blank" rel="noopener">observable</a> 、<a href="https://codepen.io/" target="_blank" rel="noopener">codepen</a></p>
 <h3 id="HTML-书写"><a href="#HTML-书写" class="headerlink" title="HTML 书写"></a>HTML 书写</h3><p>pass</p>
@@ -600,8 +342,6 @@
 <p>插值模式：linear，step，basis，</p>
 <figure class="highlight html"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">	</span><br></pre></td></tr></table></figure>
 
-          
-        
       
     </div>
     
@@ -618,157 +358,32 @@
       
 
       
-
-      
-
       
       
-        <div class="post-eof"></div>
+
       
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/20/Building Biological Databases/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HaolinZhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534345547319&di=b9e880681b19e0cefb3132f38ccb0281&imgtype=0&src=http%3A%2F%2Fimg.duoziwang.com%2F2017%2F09%2F1607450267817.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="find my way">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/04/20/Building Biological Databases/" itemprop="url">未命名</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
             
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-20T14:17:22+08:00">
-                2020-04-20
-              </time>
+              <a href="/2020/04/20/Building Biological Databases/" rel="next" title="">
+                <i class="fa fa-chevron-left"></i> 
+              </a>
             
+          </div>
 
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
             
-
+              <a href="/2020/06/14/毕业论文之数据库设计/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
             
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
+          </div>
         </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
       
 
       
-        
-          
-            <p>###Book:《Developing bioinformatics computer skills》2003</p>
-<h3 id="Chapter-13-Building-Biological-Databases"><a href="#Chapter-13-Building-Biological-Databases" class="headerlink" title="Chapter 13.Building Biological Databases"></a>Chapter 13.Building Biological Databases</h3><p>[TOC]</p>
-<h4 id="intro"><a href="#intro" class="headerlink" title="intro"></a>intro</h4><p>构建数据库的几个步骤：designing a data model, choosing a database management system (DBMS), implementing your data model, and developing a user-friendly frontend to your database.</p>
-<h4 id="13-1-Types-of-Databases"><a href="#13-1-Types-of-Databases" class="headerlink" title="13.1 Types of Databases"></a>13.1 Types of Databases</h4><p>1.Flat file databases:相当于一个文件夹，分门别类整理了不同文件；</p>
-<p>2.relational databases：关系型数据库，使用<strong>表格</strong>（tables）组织数据，不同表格构成关系网络组成数据库称做database schema.</p>
-<p>3.Object-Oriented Databases ：面向对象数据库.</p>
-<h4 id="13-2-Database-Software"><a href="#13-2-Database-Software" class="headerlink" title="13.2 Database Software"></a>13.2 Database Software</h4><p>1.Sequence Retrieval System (SRA):SRS was developed at EMBL specifically for use in molecular biology database applications;</p>
-<p>2.Oracle</p>
-<p>3.MySQL :it’s considered suitable for small and medium-sized database applications.</p>
-<h4 id="13-3-Introduction-to-SQL"><a href="#13-3-Introduction-to-SQL" class="headerlink" title="13.3 Introduction to SQL"></a>13.3 Introduction to SQL</h4><p><strong>SQL</strong>, or Structured Query Language, they’re case-insensitive.</p>
-<figure class="highlight sql"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"># 1.datatypes</span><br><span class="line"># INT, FLOAT, REAL, CHAR, TEXT, BLOB, DECIMAL, DATE, TIMESTAMP, ENUM, SET</span><br><span class="line"># 2.SQL commands</span><br><span class="line"># 2.1 数据库添加表</span><br><span class="line"><span class="keyword">CREATE</span> <span class="keyword">TABLE</span> tablename (columnname <span class="keyword">type</span> [modifiers] columnname <span class="keyword">type</span>  [modifiers])</span><br><span class="line"># <span class="number">2.2</span> 修改表</span><br><span class="line"><span class="keyword">ALTER</span> <span class="keyword">TABLE</span> tablename <span class="keyword">ADD</span> [<span class="keyword">COLUMN</span>] (columnname <span class="keyword">type</span> [modifiers])</span><br><span class="line"># <span class="number">2.3</span> 表中添加数据</span><br><span class="line"><span class="keyword">INSERT</span> <span class="keyword">INTO</span> <span class="keyword">table</span> ( colname1, colname2, colname3 ) <span class="keyword">VALUES</span> ( <span class="string">'value1'</span>,<span class="string">'value2'</span>,<span class="string">'value3'</span>) </span><br><span class="line"># <span class="number">2.4</span> 取数据</span><br><span class="line"><span class="keyword">SELECT</span> [<span class="keyword">fields</span>] <span class="keyword">FROM</span> [<span class="keyword">table</span>] <span class="keyword">WHERE</span> [clause] </span><br><span class="line"><span class="keyword">SELECT</span> * <span class="keyword">FROM</span> [<span class="keyword">table</span>] <span class="keyword">WHERE</span> [clause]</span><br></pre></td></tr></table></figure>
-<p>更多关于SQL的知识：<a href="https://www.w3school.com.cn/sql/sql_create_table.asp" target="_blank" rel="noopener">w3school sql</a></p>
-<h4 id="13-4-Installing-the-MySQL-DBMS"><a href="#13-4-Installing-the-MySQL-DBMS" class="headerlink" title="13.4 Installing the MySQL DBMS"></a>13.4 Installing the MySQL DBMS</h4><p>MySql在阿里云服务器上安装的大致流程,服务器是linux 64位系统:<a href="https://www.runoob.com/mysql/mysql-install.html" target="_blank" rel="noopener">ref</a></p>
-<p>安装前检测系统是否已经安装mysql：</p>
-<p><code>rpm -qa | grep mysql</code></p>
-<p>如果已经安装要重新安装的话，卸载之：</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br></pre></td><td class="code"><pre><span class="line">rpm -e mysql　　// 普通删除模式</span><br><span class="line">rpm -e --nodeps mysql　　// 强力删除模式，如果使用上面命令删除时，提示有依赖的其它文件，则用该命令可以对其进行强力删除</span><br></pre></td></tr></table></figure>
-<p>安装MySQL</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">wget http://repo.mysql.com/mysql-community-release-el7-5.noarch.rpm</span><br><span class="line">rpm -ivh mysql-community-release-el7-5.noarch.rpm    # -i install</span><br><span class="line">yum update</span><br><span class="line">yum install mysql-server    # 网速太慢，可以选择本地安装</span><br></pre></td></tr></table></figure>
-<p>这里遇到一个小问题，<code>yum install mysql-server</code> 阿里云服务器下载速度太慢，在本地下载好传到服务器上进行安装；</p>
-<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">rpm -ivh mysql-community-client-8.0.19-1.el7.x86_64.rpm</span><br><span class="line">yum install  libaio-devel.x86_64</span><br><span class="line">rpm -ivh mysql-community-server-8.0.19-1.el7.x86_64.rpm</span><br><span class="line">chown -R mysql:mysql /var/lib/mysql    # 权限设置</span><br><span class="line"></span><br><span class="line">mysqld --initialize    # 初始化MySQL</span><br><span class="line">systemctl start mysqld    # 启动MySQL</span><br><span class="line">systemctl restart mysqld    # 重启</span><br><span class="line">systemctl status mysqld    # 查看MySQL运行状态</span><br><span class="line"></span><br><span class="line">mysql -u root -p    # root 初始密码：qf3F,loqtqpB</span><br><span class="line">mysqladmin -u root -p password 新密码    # 修改密码</span><br><span class="line"></span><br><span class="line"><span class="meta">#</span> 使用rpm安装，datadir位于</span><br><span class="line">/var/lib/mysql</span><br><span class="line">/etc/my.cnf    # mysql的一个文件</span><br><span class="line">/var/log/mysql.log    # mysql日志</span><br></pre></td></tr></table></figure>
-<p>mysql具体语法再看；</p>
-<h4 id="13-5-Database-Design"><a href="#13-5-Database-Design" class="headerlink" title="13.5 Database Design"></a>13.5 Database Design</h4><p>pass</p>
-<h4 id="13-6-Developing-Web-Based-Software-That-Interacts-with-Databases"><a href="#13-6-Developing-Web-Based-Software-That-Interacts-with-Databases" class="headerlink" title="13.6 Developing Web-Based Software That Interacts with Databases"></a>13.6 Developing Web-Based Software That Interacts with Databases</h4><p>1.Common Gateway Interface (CGI):例如<a href="https://blast.ncbi.nlm.nih.gov/Blast.cgi" target="_blank" rel="noopener">ncbi blast</a>就是cgi写的</p>
-<p>2.eXtensible Markup Language (XML)</p>
-<p>3.PHP</p>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
       
     </footer>
   </div>
@@ -778,311 +393,11 @@
   </article>
 
 
-    
-      
 
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/04/01/machine_learning/machine_learning_watermelon/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HaolinZhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534345547319&di=b9e880681b19e0cefb3132f38ccb0281&imgtype=0&src=http%3A%2F%2Fimg.duoziwang.com%2F2017%2F09%2F1607450267817.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="find my way">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/04/01/machine_learning/machine_learning_watermelon/" itemprop="url">未命名</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-04-01T00:52:33+08:00">
-                2020-04-01
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>[TOC]</p>
-<h3 id="introduction"><a href="#introduction" class="headerlink" title="introduction"></a>introduction</h3><p>相关资源：</p>
-<p>1.B站视频<a href="https://www.bilibili.com/video/BV17J411C7zZ" target="_blank" rel="noopener">一起读西瓜书</a></p>
-<p>2.github西瓜书推导:<a href="https://github.com/datawhalechina/pumpkin-book" target="_blank" rel="noopener">pumpkinbook</a></p>
-
-          
-        
+    <div class="post-spread">
       
     </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
   </div>
-  
-  
-  
-  </article>
-
-
-    
-      
-
-  
-
-  
-  
-  
-
-  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
-  
-  
-  
-  <div class="post-block">
-    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/27/DeepGoPlus/">
-
-    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
-      <meta itemprop="name" content="HaolinZhong">
-      <meta itemprop="description" content="">
-      <meta itemprop="image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534345547319&di=b9e880681b19e0cefb3132f38ccb0281&imgtype=0&src=http%3A%2F%2Fimg.duoziwang.com%2F2017%2F09%2F1607450267817.jpg">
-    </span>
-
-    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
-      <meta itemprop="name" content="find my way">
-    </span>
-
-    
-      <header class="post-header">
-
-        
-        
-          <h1 class="post-title" itemprop="name headline">
-                
-                <a class="post-title-link" href="/2020/03/27/DeepGoPlus/" itemprop="url">未命名</a></h1>
-        
-
-        <div class="post-meta">
-          <span class="post-time">
-            
-              <span class="post-meta-item-icon">
-                <i class="fa fa-calendar-o"></i>
-              </span>
-              
-                <span class="post-meta-item-text">发表于</span>
-              
-              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-27T10:23:17+08:00">
-                2020-03-27
-              </time>
-            
-
-            
-
-            
-          </span>
-
-          
-
-          
-            
-          
-
-          
-          
-
-          
-
-          
-
-          
-
-        </div>
-      </header>
-    
-
-    
-    
-    
-    <div class="post-body" itemprop="articleBody">
-
-      
-      
-
-      
-        
-          
-            <p>DeepGOPlus: improved protein function prediction from sequence</p>
-<p>文章地址：<a href="https://academic.oup.com/bioinformatics/article/36/2/422/5539866" target="_blank" rel="noopener">https://academic.oup.com/bioinformatics/article/36/2/422/5539866</a></p>
-<p>github地址：<a href="https://github.com/bio-ontology-research-group/deepgoplus" target="_blank" rel="noopener">https://github.com/bio-ontology-research-group/deepgoplus</a></p>
-<h3 id="Abstract"><a href="#Abstract" class="headerlink" title="Abstract"></a>Abstract</h3><p>Many methods are available for predicting protein functions from <u>sequence based features</u>, <u>protein–protein interaction networks</u>, <u>protein structure or literature</u>. However, other than sequence,most of the features are difficult to obtain or not available for many proteins thereby limiting their scope.</p>
-<h3 id="Results"><a href="#Results" class="headerlink" title="Results"></a>Results</h3><p>作者开发了一个基于CNN模型从序列出发预测蛋白质功能的方法。使用CAFA3的评价方法，BPO，MFO，CCO这三大类GO术语的预测Fmax值分别为0.390, 0.557 和 0.614。</p>
-<p>###Materials and methods</p>
-<p>####Dataset and methods</p>
-<p>CAFA3 training sequences and experimental annotations published on September, 2016</p>
-<p><img src="/Users/zhonghaolin/Hexo/source/_posts/image/deepgoplus_table1.png" alt="deepgoplus_table1"></p>
-<p>以CAFA3数据集为例</p>
-<p>training_data(66841,3)数据结构如下</p>
-<table>
-<thead>
-<tr>
-<th></th>
-<th>proteins</th>
-<th>sequences</th>
-<th>annotations</th>
-</tr>
-</thead>
-<tbody>
-<tr>
-<td>0</td>
-<td>A0A060X6Z0</td>
-<td>MPISSSSSSSTKSMRRAASELERSDSVTSPRFIGRRQSLIEDARKE…</td>
-<td>GO:0044459, GO:0097458, GO:0003824, GO:004300…</td>
-</tr>
-<tr>
-<td>…</td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr>
-<td>66840</td>
-<td>X5M5N0</td>
-<td>MPDSITNGGRPPAPPSSVSSTTASTTGNFGTRRRLVNRIKKVDELH…</td>
-<td>GO:0051252, GO:1903507, GO:0006807, GO:000697…</td>
-</tr>
-</tbody>
-</table>
-<p>GO terms(43994)所有GO术语</p>
-<p>go.ont[“GO:0000001”] = </p>
-<p>{‘is_a’: [‘GO:0048308’, ‘GO:0048311’],<br> ‘part_of’: [],<br> ‘regulates’: [],<br> ‘alt_ids’: [],<br> ‘is_obsolete’: False,<br> ‘id’: ‘GO:0000001’,<br> ‘name’: ‘mitochondrion inheritance’,<br> ‘namespace’: ‘biological_process’,<br> ‘children’: set()}</p>
-<p>terms 最后的分类种类5220种</p>
-<h4 id="Model-training-and-tuning"><a href="#Model-training-and-tuning" class="headerlink" title="Model training and tuning"></a>Model training and tuning</h4><p><img src="/Users/zhonghaolin/Hexo/source/_posts/image/deepgoplus_fig1.png" alt=""></p>
-<p>​                                                        the architecture of deep learning model</p>
-<p>用不同参数做实验得到的最佳参数：convolutional layers with filter lengths {8, 16, 24,. . ., 128} with 512 filters each and 1 fully connected layer.</p>
-<p>####Evaluation and comparison</p>
-<p><img src="/Users/zhonghaolin/Hexo/source/_posts/image/deepgoplus_tab3.png" alt=""></p>
-<h3 id="Discussion"><a href="#Discussion" class="headerlink" title="Discussion"></a>Discussion</h3><p>In DeepGOPlus, we combine similarity-based search to proteins with known functions and motif-based function prediction, and this combination gives us overall the best predictive performance.</p>
-<p>In the future, we plan to incorporate additional features and test other types of deep neural network models</p>
-<p>###Code</p>
-<p>keras参考：<a href="https://cloud.tencent.com/developer/article/1120167" target="_blank" rel="noopener">https://cloud.tencent.com/developer/article/1120167</a> 和 keras中文文档</p>
-<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br><span class="line">164</span><br><span class="line">165</span><br><span class="line">166</span><br><span class="line">167</span><br><span class="line">168</span><br><span class="line">169</span><br><span class="line">170</span><br><span class="line">171</span><br><span class="line">172</span><br></pre></td><td class="code"><pre><span class="line"><span class="comment"># 使用keras实现</span></span><br><span class="line"><span class="keyword">import</span> pandas <span class="keyword">as</span> pd</span><br><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">import</span> logging</span><br><span class="line"><span class="keyword">import</span> math</span><br><span class="line"><span class="keyword">from</span> utils <span class="keyword">import</span> Ontology</span><br><span class="line"><span class="keyword">import</span> tensorflow <span class="keyword">as</span> tf</span><br><span class="line"><span class="keyword">from</span> keras <span class="keyword">import</span> backend <span class="keyword">as</span> K</span><br><span class="line"><span class="comment"># from keras.models import Sequential</span></span><br><span class="line"><span class="keyword">from</span> keras.models <span class="keyword">import</span> Model, load_model</span><br><span class="line"><span class="keyword">from</span> keras.layers.core <span class="keyword">import</span> Dense, Activation, Dropout</span><br><span class="line"><span class="keyword">from</span> keras.layers <span class="keyword">import</span> Conv1D, MaxPooling1D, Flatten, Concatenate, Dropout</span><br><span class="line"><span class="keyword">from</span> keras.engine.input_layer <span class="keyword">import</span> Input</span><br><span class="line"><span class="keyword">from</span> keras.optimizers <span class="keyword">import</span> Adam</span><br><span class="line"><span class="keyword">from</span> keras.callbacks <span class="keyword">import</span> ModelCheckpoint, EarlyStopping, CSVLogger</span><br><span class="line"><span class="comment"># from keras.losses import categorical_crossentropy</span></span><br><span class="line"><span class="keyword">from</span> keras.losses <span class="keyword">import</span> binary_crossentropy</span><br><span class="line"><span class="keyword">from</span> aminoacids <span class="keyword">import</span> to_ngrams, to_onehot, MAXLEN    <span class="comment"># MAXLEN = 2000</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_data</span><span class="params">(data_file, split)</span>:</span></span><br><span class="line">	df = pd.read_pickle(data_file)</span><br><span class="line">	n = len(df)</span><br><span class="line">	<span class="comment"># Split train/valid</span></span><br><span class="line">	n = len(df)</span><br><span class="line">	index = np.arange(n)</span><br><span class="line">	train_n = int(n * split)</span><br><span class="line">	np.random.seed(seed=<span class="number">0</span>)</span><br><span class="line">	np.random.shuffle(index)</span><br><span class="line">	train_df = df.iloc[index[:train_n]]</span><br><span class="line">	valid_df = df.iloc[index[train_n:]]</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> train_df, valid_df</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">create_model</span><span class="params">(nb_classes, params)</span>:</span></span><br><span class="line">	inp_hot = Input(shape=(MAXLEN, <span class="number">21</span>), dtype=np.float32)</span><br><span class="line"></span><br><span class="line">	kernels = range(<span class="number">8</span>, params[<span class="string">'max_kernel'</span>], <span class="number">8</span>)</span><br><span class="line">	nets = []</span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(len(kernels)):</span><br><span class="line">		conv = Conv1D(filters=params[<span class="string">'nb_filters'</span>], kernel_size=kernels[i], padding=<span class="string">'valid'</span>, name=<span class="string">'conv_'</span> + str(i),</span><br><span class="line">			kernel_initializer=params[<span class="string">'initializer'</span>])(inp_hot)    <span class="comment"># Glorot 均匀分布初始化器</span></span><br><span class="line">		print(conv.get_shape())</span><br><span class="line">		pool = MaxPooling1D(pool_size=MAXLEN - kernels[i] + <span class="number">1</span>, name=<span class="string">'pool_'</span> + str(i))(conv)</span><br><span class="line">		flat = Flatten(name=<span class="string">'flat_'</span> + str(i))(pool)</span><br><span class="line">		nets.append(flat)</span><br><span class="line"></span><br><span class="line">	net = Concatenate(axis=<span class="number">1</span>)(nets)</span><br><span class="line">	<span class="keyword">for</span> i <span class="keyword">in</span> range(params[<span class="string">'dense_depth'</span>]):</span><br><span class="line">		net = Dense(nb_classes, activation=<span class="string">'relu'</span>, name=<span class="string">'dense_'</span> + str(i))(net)</span><br><span class="line">	output = Dense(nb_classes, activation=<span class="string">'sigmoid'</span>, name=<span class="string">'dense_out'</span>)(net)</span><br><span class="line">	model = Model(inputs=inp_hot, outputs=output)</span><br><span class="line">	model.summary()</span><br><span class="line">	model.compile(optimizer=params[<span class="string">'optimizer'</span>], loss=params[<span class="string">'loss'</span>])</span><br><span class="line"></span><br><span class="line">	<span class="keyword">return</span> model</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="class"><span class="keyword">class</span> <span class="title">DFGenerator</span><span class="params">(object)</span>:</span></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__init__</span><span class="params">(self, df, terms_dict, nb_classes, batch_size)</span>:</span></span><br><span class="line">		self.start = <span class="number">0</span></span><br><span class="line">		self.size = len(df)</span><br><span class="line">		self.df = df</span><br><span class="line">		self.batch_size = batch_size</span><br><span class="line">		self.nb_classes = nb_classes</span><br><span class="line">		self.terms_dict = terms_dict</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">__next__</span><span class="params">(self)</span>:</span></span><br><span class="line">		<span class="keyword">return</span> self.next()</span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">reset</span><span class="params">(self)</span>:</span></span><br><span class="line">		self.start = <span class="number">0</span></span><br><span class="line"></span><br><span class="line">	<span class="function"><span class="keyword">def</span> <span class="title">next</span><span class="params">(self)</span>:</span></span><br><span class="line">		<span class="keyword">if</span> self.start &lt; self.size:</span><br><span class="line">			batch_index = np.arange(self.start, min(self.size, self.start + self.batch_size))</span><br><span class="line">			df = self.df.iloc[batch_index]</span><br><span class="line">			data_onehot = np.zeros((len(df), MAXLEN, <span class="number">21</span>), dtype=np.int32)</span><br><span class="line">			labels = np.zeros((len(df), self.nb_classes), dtype=np.int32)</span><br><span class="line">			<span class="keyword">for</span> i, row <span class="keyword">in</span> enumerate(df.itertuples()):</span><br><span class="line">				seq = row.sequences</span><br><span class="line">				onehot = to_onehot(seq)</span><br><span class="line">				data_onehot[i, :, :] = onehot</span><br><span class="line">				<span class="keyword">for</span> t_id <span class="keyword">in</span> row.annotations:</span><br><span class="line">					<span class="keyword">if</span> t_id <span class="keyword">in</span> self.terms_dict:</span><br><span class="line">						labels[i, self.terms_dict[t_id]] = <span class="number">1</span></span><br><span class="line">			self.start += self.batch_size</span><br><span class="line">			<span class="keyword">return</span> (data_onehot, labels)</span><br><span class="line">		<span class="keyword">else</span>:</span><br><span class="line">			self.reset()</span><br><span class="line">			<span class="keyword">return</span> self.next()</span><br><span class="line"></span><br><span class="line"></span><br><span class="line"><span class="keyword">if</span> __name__ == <span class="string">'__main__'</span>:</span><br><span class="line">	<span class="comment"># 设置一下</span></span><br><span class="line">	<span class="comment"># num_cores = 4</span></span><br><span class="line">	<span class="comment">#</span></span><br><span class="line">	<span class="comment"># config = tf.ConfigProto(intra_op_parallelism_threads=num_cores, inter_op_parallelism_threads=num_cores,</span></span><br><span class="line">	<span class="comment"># 						allow_soft_placement=True, device_count=&#123;'CPU': 4&#125;)</span></span><br><span class="line">	<span class="comment"># session = tf.Session(config=config)</span></span><br><span class="line">	<span class="comment"># K.set_session(session)</span></span><br><span class="line">	logging.basicConfig(level=logging.INFO)</span><br><span class="line"></span><br><span class="line">	config = tf.ConfigProto(allow_soft_placement=<span class="keyword">True</span>)</span><br><span class="line">	config.gpu_options.allow_growth = <span class="keyword">True</span></span><br><span class="line">	session = tf.Session(config=config)</span><br><span class="line">	K.set_session(session)</span><br><span class="line"></span><br><span class="line">	params = &#123;</span><br><span class="line">		<span class="string">'max_kernel'</span>: <span class="number">129</span>,</span><br><span class="line">		<span class="string">'initializer'</span>: <span class="string">'glorot_normal'</span>,</span><br><span class="line">		<span class="string">'dense_depth'</span>: <span class="number">0</span>,</span><br><span class="line">		<span class="string">'nb_filters'</span>: <span class="number">512</span>,</span><br><span class="line">		<span class="string">'optimizer'</span>: Adam(lr=<span class="number">3e-4</span>),</span><br><span class="line">		<span class="string">'loss'</span>: <span class="string">'binary_crossentropy'</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="comment"># hyper parameter</span></span><br><span class="line">	batch_size = <span class="number">64</span>    <span class="comment"># default:128</span></span><br><span class="line">	epochs = <span class="number">50</span>    <span class="comment"># default:1024</span></span><br><span class="line">	<span class="comment"># 输出文件</span></span><br><span class="line">	model_file = <span class="string">"data/model_testz.h5"</span></span><br><span class="line">	logger_file = <span class="string">"data/training.csv"</span></span><br><span class="line">	<span class="comment"># read training data and go terms</span></span><br><span class="line">	data_file = <span class="string">"/home/haolinz/share_dir/deepgoplus/data-cafa/train_data.pkl"</span></span><br><span class="line">	train_df, valid_df = load_data(data_file, split=<span class="number">0.9</span>)</span><br><span class="line">	test_data_file = <span class="string">"/home/haolinz/share_dir/deepgoplus/data-cafa/test_data.pkl"</span></span><br><span class="line">	test_df = pd.read_pickle(test_data_file)</span><br><span class="line">	go_file = <span class="string">"/home/haolinz/share_dir/deepgoplus/data-cafa/go.obo"</span></span><br><span class="line">	go = Ontology(go_file, with_rels=<span class="keyword">True</span>)</span><br><span class="line">	terms_file = <span class="string">"/home/haolinz/share_dir/deepgoplus/data-cafa/terms.pkl"</span></span><br><span class="line">	terms_df = pd.read_pickle(terms_file)</span><br><span class="line">	terms = terms_df[<span class="string">'terms'</span>].values.flatten()    <span class="comment"># 展平成ndarray</span></span><br><span class="line">	terms_dict = &#123;v: i <span class="keyword">for</span> i, v <span class="keyword">in</span> enumerate(terms)&#125;</span><br><span class="line">	nb_classes = len(terms)</span><br><span class="line">	test_steps = int(len(test_df) / batch_size)</span><br><span class="line">	test_generator = DFGenerator(test_df, terms_dict, nb_classes, batch_size)</span><br><span class="line">	<span class="comment"># create model</span></span><br><span class="line">	logging.info(<span class="string">'Creating a new model'</span>)</span><br><span class="line">	model = create_model(nb_classes, params)</span><br><span class="line">	logging.info(<span class="string">"Training data size: %d"</span> % len(train_df))</span><br><span class="line">	logging.info(<span class="string">"Validation data size: %d"</span> % len(valid_df))</span><br><span class="line">	checkpointer = ModelCheckpoint(filepath=model_file, verbose=<span class="number">1</span>, save_best_only=<span class="keyword">True</span>)</span><br><span class="line">	earlystopper = EarlyStopping(monitor=<span class="string">'val_loss'</span>, patience=<span class="number">6</span>, verbose=<span class="number">1</span>)</span><br><span class="line">	logger = CSVLogger(logger_file)</span><br><span class="line"></span><br><span class="line">	logging.info(<span class="string">'Starting training the model'</span>)</span><br><span class="line"></span><br><span class="line">	valid_steps = int(len(valid_df) / batch_size)</span><br><span class="line">	train_steps = int(len(train_df) / batch_size)</span><br><span class="line">	train_generator = DFGenerator(train_df, terms_dict, nb_classes, batch_size)</span><br><span class="line">	valid_generator = DFGenerator(valid_df, terms_dict, nb_classes, batch_size)</span><br><span class="line"></span><br><span class="line">	model.summary()</span><br><span class="line">	model.fit_generator(</span><br><span class="line">		train_generator,</span><br><span class="line">		steps_per_epoch=train_steps,</span><br><span class="line">		epochs=epochs,</span><br><span class="line">		validation_data=valid_generator,</span><br><span class="line">		validation_steps=valid_steps,</span><br><span class="line">		max_queue_size=batch_size,    <span class="comment"># batch_size</span></span><br><span class="line">		workers=<span class="number">12</span>,    <span class="comment"># 12</span></span><br><span class="line">		callbacks=[logger, checkpointer, earlystopper])</span><br><span class="line">	logging.info(<span class="string">'Loading best model'</span>)</span><br><span class="line">	model = load_model(model_file)</span><br><span class="line"></span><br><span class="line">	logging.info(<span class="string">'Evaluating model'</span>)</span><br><span class="line">	loss = model.evaluate_generator(test_generator, steps=test_steps)    <span class="comment"># test data</span></span><br><span class="line">	logging.info(<span class="string">'Test loss %f'</span> % loss)</span><br><span class="line">	logging.info(<span class="string">'Predicting'</span>)</span><br><span class="line">	valid_generator.reset()</span><br><span class="line">	preds = model.predict_generator(valid_generator, steps=valid_steps)</span><br></pre></td></tr></table></figure>
-
-          
-        
-      
-    </div>
-    
-    
-    
-
-    
-
-    
-
-    
-
-    <footer class="post-footer">
-      
-
-      
-
-      
-
-      
-      
-        <div class="post-eof"></div>
-      
-    </footer>
-  </div>
-  
-  
-  
-  </article>
-
-
-    
-  </section>
-
-  
-  <nav class="pagination">
-    <span class="page-number current">1</span><a class="page-number" href="/page/2/">2</a><a class="page-number" href="/page/3/">3</a><a class="extend next" rel="next" href="/page/2/"><i class="fa fa-angle-right"></i></a>
-  </nav>
-
 
 
           </div>
@@ -1090,6 +405,10 @@
 
 
           
+
+  
+
+
 
         </div>
         
@@ -1110,8 +429,17 @@
       
 
       
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
 
-      <section class="site-overview-wrap sidebar-panel sidebar-panel-active">
+      <section class="site-overview-wrap sidebar-panel">
         <div class="site-overview">
           <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
             
@@ -1157,6 +485,22 @@
         </div>
       </section>
 
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#intro"><span class="nav-number">1.</span> <span class="nav-text">intro</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#HTML-书写"><span class="nav-number">2.</span> <span class="nav-text">HTML 书写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#SVG-书写"><span class="nav-number">3.</span> <span class="nav-text">SVG 书写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#CSS书写"><span class="nav-number">4.</span> <span class="nav-text">CSS书写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#JavaScript-书写"><span class="nav-number">5.</span> <span class="nav-text">JavaScript 书写</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#D3-js-书写"><span class="nav-number">6.</span> <span class="nav-text">D3.js 书写</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
       
 
       
@@ -1290,6 +634,10 @@
   
 
   
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
 
   
 

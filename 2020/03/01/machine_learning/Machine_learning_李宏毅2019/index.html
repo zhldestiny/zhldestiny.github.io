@@ -1,0 +1,707 @@
+<!DOCTYPE html>
+
+
+
+  
+
+
+<html class="theme-next muse use-motion" lang="zh-Hans">
+<head>
+  <meta charset="UTF-8"/>
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1"/>
+<meta name="theme-color" content="#222">
+
+
+
+
+
+
+
+
+
+<meta http-equiv="Cache-Control" content="no-transform" />
+<meta http-equiv="Cache-Control" content="no-siteapp" />
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+  <link href="/lib/fancybox/source/jquery.fancybox.css?v=2.1.5" rel="stylesheet" type="text/css" />
+
+
+
+
+
+
+
+<link href="/lib/font-awesome/css/font-awesome.min.css?v=4.6.2" rel="stylesheet" type="text/css" />
+
+<link href="/css/main.css?v=5.1.4" rel="stylesheet" type="text/css" />
+
+
+  <link rel="apple-touch-icon" sizes="180x180" href="/images/apple-touch-icon-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="32x32" href="/images/favicon-32x32-next.png?v=5.1.4">
+
+
+  <link rel="icon" type="image/png" sizes="16x16" href="/images/favicon-16x16-next.png?v=5.1.4">
+
+
+  <link rel="mask-icon" href="/images/logo.svg?v=5.1.4" color="#222">
+
+
+
+
+
+  <meta name="keywords" content="Hexo, NexT" />
+
+
+
+
+
+
+
+
+
+
+<meta name="description" content="[TOC] ###introduction Bilibili地址：2019李宏毅机器学习入门 W11.机器学习的介绍​    pass 2.regression-case study回归模型，主要介绍的是最简单的线性回归模型，y=b+wx，预测精灵宝可梦进化后的战力值变化，模型复杂从一元一次变为二次，三次，甚至四次并且在这个过程中介绍过拟合现象（overfitting）；及模型好坏的评价指标损失函">
+<meta property="og:type" content="article">
+<meta property="og:title" content="find my way">
+<meta property="og:url" content="http://yoursite.com/2020/03/01/machine_learning/Machine_learning_李宏毅2019/index.html">
+<meta property="og:site_name" content="find my way">
+<meta property="og:description" content="[TOC] ###introduction Bilibili地址：2019李宏毅机器学习入门 W11.机器学习的介绍​    pass 2.regression-case study回归模型，主要介绍的是最简单的线性回归模型，y=b+wx，预测精灵宝可梦进化后的战力值变化，模型复杂从一元一次变为二次，三次，甚至四次并且在这个过程中介绍过拟合现象（overfitting）；及模型好坏的评价指标损失函">
+<meta property="og:locale" content="zh-Hans">
+<meta property="og:image" content="http://yoursite.com/Users/zhonghaolin/Hexo/source/_posts/image/install_pytorch.png">
+<meta property="og:updated_time" content="2020-04-11T02:58:13.701Z">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:title" content="find my way">
+<meta name="twitter:description" content="[TOC] ###introduction Bilibili地址：2019李宏毅机器学习入门 W11.机器学习的介绍​    pass 2.regression-case study回归模型，主要介绍的是最简单的线性回归模型，y=b+wx，预测精灵宝可梦进化后的战力值变化，模型复杂从一元一次变为二次，三次，甚至四次并且在这个过程中介绍过拟合现象（overfitting）；及模型好坏的评价指标损失函">
+<meta name="twitter:image" content="http://yoursite.com/Users/zhonghaolin/Hexo/source/_posts/image/install_pytorch.png">
+
+
+
+<script type="text/javascript" id="hexo.configurations">
+  var NexT = window.NexT || {};
+  var CONFIG = {
+    root: '/',
+    scheme: 'Muse',
+    version: '5.1.4',
+    sidebar: {"position":"left","display":"post","offset":12,"b2t":false,"scrollpercent":false,"onmobile":false},
+    fancybox: true,
+    tabs: true,
+    motion: {"enable":true,"async":false,"transition":{"post_block":"fadeIn","post_header":"slideDownIn","post_body":"slideDownIn","coll_header":"slideLeftIn","sidebar":"slideUpIn"}},
+    duoshuo: {
+      userId: '0',
+      author: '博主'
+    },
+    algolia: {
+      applicationID: '',
+      apiKey: '',
+      indexName: '',
+      hits: {"per_page":10},
+      labels: {"input_placeholder":"Search for Posts","hits_empty":"We didn't find any results for the search: ${query}","hits_stats":"${hits} results found in ${time} ms"}
+    }
+  };
+</script>
+
+
+
+  <link rel="canonical" href="http://yoursite.com/2020/03/01/machine_learning/Machine_learning_李宏毅2019/"/>
+
+
+
+
+
+  <title> | find my way</title>
+  
+
+
+
+
+
+
+
+
+</head>
+
+<body itemscope itemtype="http://schema.org/WebPage" lang="zh-Hans">
+
+  
+  
+    
+  
+
+  <div class="container sidebar-position-left page-post-detail">
+    <div class="headband"></div>
+
+    <header id="header" class="header" itemscope itemtype="http://schema.org/WPHeader">
+      <div class="header-inner"><div class="site-brand-wrapper">
+  <div class="site-meta ">
+    
+
+    <div class="custom-logo-site-title">
+      <a href="/"  class="brand" rel="start">
+        <span class="logo-line-before"><i></i></span>
+        <span class="site-title">find my way</span>
+        <span class="logo-line-after"><i></i></span>
+      </a>
+    </div>
+      
+        <p class="site-subtitle">accumulate</p>
+      
+  </div>
+
+  <div class="site-nav-toggle">
+    <button>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+      <span class="btn-bar"></span>
+    </button>
+  </div>
+</div>
+
+<nav class="site-nav">
+  
+
+  
+    <ul id="menu" class="menu">
+      
+        
+        <li class="menu-item menu-item-home">
+          <a href="/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-home"></i> <br />
+            
+            首页
+          </a>
+        </li>
+      
+        
+        <li class="menu-item menu-item-archives">
+          <a href="/archives/" rel="section">
+            
+              <i class="menu-item-icon fa fa-fw fa-archive"></i> <br />
+            
+            归档
+          </a>
+        </li>
+      
+
+      
+    </ul>
+  
+
+  
+</nav>
+
+
+
+ </div>
+    </header>
+
+    <main id="main" class="main">
+      <div class="main-inner">
+        <div class="content-wrap">
+          <div id="content" class="content">
+            
+
+  <div id="posts" class="posts-expand">
+    
+
+  
+
+  
+  
+  
+
+  <article class="post post-type-normal" itemscope itemtype="http://schema.org/Article">
+  
+  
+  
+  <div class="post-block">
+    <link itemprop="mainEntityOfPage" href="http://yoursite.com/2020/03/01/machine_learning/Machine_learning_李宏毅2019/">
+
+    <span hidden itemprop="author" itemscope itemtype="http://schema.org/Person">
+      <meta itemprop="name" content="HaolinZhong">
+      <meta itemprop="description" content="">
+      <meta itemprop="image" content="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534345547319&di=b9e880681b19e0cefb3132f38ccb0281&imgtype=0&src=http%3A%2F%2Fimg.duoziwang.com%2F2017%2F09%2F1607450267817.jpg">
+    </span>
+
+    <span hidden itemprop="publisher" itemscope itemtype="http://schema.org/Organization">
+      <meta itemprop="name" content="find my way">
+    </span>
+
+    
+      <header class="post-header">
+
+        
+        
+          <h1 class="post-title" itemprop="name headline"></h1>
+        
+
+        <div class="post-meta">
+          <span class="post-time">
+            
+              <span class="post-meta-item-icon">
+                <i class="fa fa-calendar-o"></i>
+              </span>
+              
+                <span class="post-meta-item-text">发表于</span>
+              
+              <time title="创建于" itemprop="dateCreated datePublished" datetime="2020-03-01T21:54:35+08:00">
+                2020-03-01
+              </time>
+            
+
+            
+
+            
+          </span>
+
+          
+
+          
+            
+          
+
+          
+          
+
+          
+
+          
+
+          
+
+        </div>
+      </header>
+    
+
+    
+    
+    
+    <div class="post-body" itemprop="articleBody">
+
+      
+      
+
+      
+        <p>[TOC]</p>
+<p>###introduction</p>
+<p>Bilibili地址：<a href="https://www.bilibili.com/video/av73798762?p=24" target="_blank" rel="noopener">2019李宏毅机器学习入门</a></p>
+<h3 id="W1"><a href="#W1" class="headerlink" title="W1"></a>W1</h3><h4 id="1-机器学习的介绍"><a href="#1-机器学习的介绍" class="headerlink" title="1.机器学习的介绍"></a>1.机器学习的介绍</h4><p>​    pass</p>
+<h4 id="2-regression-case-study"><a href="#2-regression-case-study" class="headerlink" title="2.regression-case study"></a>2.regression-case study</h4><p>回归模型，主要介绍的是最简单的线性回归模型，y=b+wx，预测精灵宝可梦进化后的战力值变化，模型复杂从一元一次变为二次，三次，甚至四次并且在这个过程中介绍过拟合现象（<strong>overfitting</strong>）；及模型好坏的评价指标损失函数（<strong>loss function</strong>）：最简单的损失函数相当于概率论里的平方差即（预测值-实际值）平方，稍微复杂一点的是加上w的权重使选出的模型更加平滑（smooth）；使用梯度下降（<strong>gradient descent</strong>）来寻找最优解，大致公式为w0-（待定）；</p>
+<p>step 1：Model，选择模型；</p>
+<p>step 2: goodness of function，衡量模型好坏的函数；</p>
+<p>step 3：Best function（best gradient），寻找模型的最佳参数即调参；</p>
+<h4 id="3-gradient-descent"><a href="#3-gradient-descent" class="headerlink" title="3.gradient descent"></a>3.gradient descent</h4><p>pass</p>
+<h4 id="Hw1"><a href="#Hw1" class="headerlink" title="Hw1"></a>Hw1</h4><p>pass</p>
+<h3 id="W2"><a href="#W2" class="headerlink" title="W2"></a>W2</h3><h4 id="1-bias-and-variance"><a href="#1-bias-and-variance" class="headerlink" title="1.bias and variance"></a>1.bias and variance</h4><p>pass</p>
+<p>####2.classification: probabilistic generative model</p>
+<p>pass</p>
+<h4 id="3-logistic-regression"><a href="#3-logistic-regression" class="headerlink" title="3.logistic regression"></a>3.logistic regression</h4><p>pass</p>
+<h3 id="W3"><a href="#W3" class="headerlink" title="W3"></a>W3</h3><p>####1.deep learning</p>
+<p>pass</p>
+<p>####2.backpropagation</p>
+<p>pass</p>
+<h4 id="3-Anomaly-detection-异常检测"><a href="#3-Anomaly-detection-异常检测" class="headerlink" title="3.Anomaly detection(异常检测)"></a>3.Anomaly detection(异常检测)</h4><p>pass</p>
+<h3 id="W4"><a href="#W4" class="headerlink" title="W4"></a>W4</h3><p>####1.CNN</p>
+<p>pass</p>
+<h4 id="2-keras"><a href="#2-keras" class="headerlink" title="2.keras"></a>2.keras</h4><p>keras一些文档:<a href="http://keras.io/" target="_blank" rel="noopener">Documentation</a> ,<a href="https://github.com/fchollet/keras/tree/master/examples" target="_blank" rel="noopener">Example</a>,<a href="https://faroit.github.io/keras-docs/2.0.2/getting-started/faq/#how-can-i-save-a-keras-model" target="_blank" rel="noopener">save and load model</a>;</p>
+<p>keras安装（参考<a href="https://morvanzhou.github.io/tutorials/machine-learning/keras/1-2-install/" target="_blank" rel="noopener">莫烦教程</a>）</p>
+<p>1.安装tensorflow；</p>
+<figure class="highlight shell"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#</span>1.安装virtualenv</span><br><span class="line">sudo pip install --upgrade virtualenv</span><br><span class="line"><span class="meta">#</span>2.建立一个全新的 virtualenv 环境. 将环境建在 ~/tensorflow 目录下</span><br><span class="line">virtualenv --system-site-packages ~/tensorflow</span><br><span class="line">cd ~/tensorflow</span><br><span class="line"><span class="meta">#</span>3.激活virtualenv</span><br><span class="line">source bin/activate</span><br><span class="line"><span class="meta">#</span>4.在virtualenv下安装tensorflow</span><br><span class="line">pip install --upgrade tensorflow #1.7</span><br><span class="line">pip install --upgrade https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.6.0-py3-none-any.whl #1.6</span><br><span class="line">/Users/zhonghaolin/tensorflow/lib/python3.6/site-packages/tensorflow</span><br></pre></td></tr></table></figure>
+<p>2.安装keras，keras依赖tensorflow/Theano作为后端引擎；</p>
+<p><code>pip install keras</code></p>
+<p>3.使用keras图像识别Mnist</p>
+<p><code>mnist.load_data()</code></p>
+<p>数据集在<code>~/.keras/datasets/mnist.npz</code></p>
+<figure class="highlight python"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">import</span> numpy <span class="keyword">as</span> np</span><br><span class="line"><span class="keyword">from</span> keras.models <span class="keyword">import</span> Sequential</span><br><span class="line"><span class="keyword">from</span> keras.layers.core <span class="keyword">import</span> Dense, Dropout, Activation</span><br><span class="line"><span class="keyword">from</span> keras.layers <span class="keyword">import</span> Conv2D, MaxPooling2D, Flatten</span><br><span class="line"><span class="keyword">from</span> keras.optimizers <span class="keyword">import</span> SGD, Adam</span><br><span class="line"><span class="keyword">from</span> keras.utils <span class="keyword">import</span> np_utils</span><br><span class="line"><span class="keyword">from</span> keras.datasets <span class="keyword">import</span> mnist</span><br><span class="line"><span class="comment">#categorical_crossentropy</span></span><br><span class="line"></span><br><span class="line"><span class="function"><span class="keyword">def</span> <span class="title">load_data</span><span class="params">()</span>:</span></span><br><span class="line">    (x_train, y_train), (x_test, y_test) = mnist.load_data()</span><br><span class="line">    number = <span class="number">10000</span></span><br><span class="line">    x_train = x_train[<span class="number">0</span>:number]</span><br><span class="line">    y_train = y_train[<span class="number">0</span>:number]</span><br><span class="line">    x_train = x_train.reshape(number, <span class="number">28</span>*<span class="number">28</span>)</span><br><span class="line">    x_test = x_test.reshape(number, <span class="number">28</span>*<span class="number">28</span>)</span><br><span class="line">    x_train = x_train.astype(<span class="string">'float32'</span>)</span><br><span class="line">    x_test = x_test.astype(<span class="string">'float32'</span>)</span><br><span class="line">    <span class="comment"># convert class vectors to binary class </span></span><br><span class="line">    y_train = np_utils.to_categorical(y_train, <span class="number">10</span>)</span><br><span class="line">    y_test = np_utils.to_categorical(y_test, <span class="number">10</span>)</span><br><span class="line">    x_train = x_train</span><br><span class="line">    y_train = y_train</span><br><span class="line">    <span class="comment">#</span></span><br><span class="line">    x_train = x_train/<span class="number">255</span></span><br><span class="line">    x_test = x_test/<span class="number">255</span></span><br><span class="line">    <span class="keyword">return</span> (x_train, y_train), (x_test, y_test)</span><br><span class="line"></span><br><span class="line">(x_train, y_train), (x_test, y_test) = load_data()</span><br><span class="line">model=Sequential()</span><br><span class="line">model.add(Dense(input_dim=<span class="number">28</span>*<span class="number">28</span>, units=<span class="number">600</span>, activation=<span class="string">'sigmoid'</span>))</span><br><span class="line">model.add(Dense(units=<span class="number">600</span>, activation=<span class="string">'sigmoid'</span>))</span><br><span class="line">model.add(Dense(units=<span class="number">600</span>, activation=<span class="string">'sigmoid'</span>))</span><br><span class="line">model.add(Dense(units=<span class="number">10</span>, activation=<span class="string">'softmax'</span>))</span><br><span class="line">model.compile(loss=<span class="string">'mse'</span>, optimizer=SGD(lr=<span class="number">0.1</span>), metrics=[<span class="string">'accuracy'</span>])</span><br><span class="line">model.fit(x_train, y_train, batch_size=<span class="number">10</span>, epochs=<span class="number">20</span>)</span><br><span class="line">result = model.evaluate(x_test, y_test)</span><br><span class="line">print(<span class="string">"\nTest Acc:"</span>, result[<span class="number">1</span>])</span><br></pre></td></tr></table></figure>
+<h4 id="HW3"><a href="#HW3" class="headerlink" title="HW3"></a>HW3</h4><p>作业相关：<a href="https://docs.google.com/presentation/d/1_UOEquMW4URIuTtrKGqwSPP4qtKIb7osT9ysTQ3Flmo/edit#slide=id.g28fb825f54_0_939" target="_blank" rel="noopener">ml-2019spring-hw3</a>,<a href="https://hackmd.io/hlJAABuoRJa0tzpD8UUHvw" target="_blank" rel="noopener">示例</a> , <a href="https://www.kaggle.com/c/ml2019spring-hw3/overview" target="_blank" rel="noopener">kaggle</a> ;</p>
+<p>keras搭建CNN；（参考<a href="https://blog.csdn.net/u012458963/article/details/72230729）" target="_blank" rel="noopener">https://blog.csdn.net/u012458963/article/details/72230729）</a></p>
+<h4 id="HW4"><a href="#HW4" class="headerlink" title="HW4"></a>HW4</h4><p>作业相关：<a href="https://ntumlta2019.github.io/ml-web-hw4/" target="_blank" rel="noopener">ml-2019spring-hw4</a> ,<a href="https://hackmd.io/435VaJPrQtCJzAdodxXbxA" target="_blank" rel="noopener">示例</a>;</p>
+<p>1.keras实现saliency map；(参考<a href="https://fairyonice.github.io/Saliency-Map-with-keras-vis.html" target="_blank" rel="noopener">https://fairyonice.github.io/Saliency-Map-with-keras-vis.html</a> ；<a href="https://mathpretty.com/10683.html；https://blog.csdn.net/qq576826394/article/details/90298003" target="_blank" rel="noopener">https://mathpretty.com/10683.html；https://blog.csdn.net/qq576826394/article/details/90298003</a>)</p>
+<p>安装pytorch(使用conda安装在主环境上了)安装1.2版本的，更高版本貌似<a href="https://heary.cn/posts/PyTorch%E6%8A%A5CUDA-error-no-kernel-image-is-available-for-execution-on-the-device%E9%97%AE%E9%A2%98%E8%A7%A3%E5%86%B3/" target="_blank" rel="noopener">不兼容Tesla K40m显卡</a>；</p>
+<p><code>conda install pytorch==1.2.0 torchvision==0.4.0 cudatoolkit=9.2 -c pytorch</code></p>
+<p><code>pip install torch==1.2.0+cu92 torchvision==0.4.0+cu92 -f  https://download.pytorch.org/whl/torch_stable.html</code></p>
+<p><a href="https://pytorch.org/get-started/locally/" target="_blank" rel="noopener">Pytorch官网</a>选择系统，输入命令如下</p>
+<p><img src="/Users/zhonghaolin/Hexo/source/_posts/image/install_pytorch.png" alt=""></p>
+<p>2.<a href="https://github.com/marcotcr/lime" target="_blank" rel="noopener">Lime</a></p>
+<h3 id="W5"><a href="#W5" class="headerlink" title="W5"></a>W5</h3><p>pass</p>
+<h3 id="W6"><a href="#W6" class="headerlink" title="W6"></a>W6</h3><p>Pass</p>
+
+      
+    </div>
+    
+    
+    
+
+    
+
+    
+
+    
+
+    <footer class="post-footer">
+      
+
+      
+      
+      
+
+      
+        <div class="post-nav">
+          <div class="post-nav-next post-nav-item">
+            
+              <a href="/2020/02/28/model_organism_proteomes/" rel="next" title="human_proteomes">
+                <i class="fa fa-chevron-left"></i> human_proteomes
+              </a>
+            
+          </div>
+
+          <span class="post-nav-divider"></span>
+
+          <div class="post-nav-prev post-nav-item">
+            
+              <a href="/2020/03/12/Decoding the evolution and transmissions of the novel pneumonia coronavirus (SARS CoV 2) using whole genomic data/" rel="prev" title="">
+                 <i class="fa fa-chevron-right"></i>
+              </a>
+            
+          </div>
+        </div>
+      
+
+      
+      
+    </footer>
+  </div>
+  
+  
+  
+  </article>
+
+
+
+    <div class="post-spread">
+      
+    </div>
+  </div>
+
+
+          </div>
+          
+
+
+          
+
+  
+
+
+
+        </div>
+        
+          
+  
+  <div class="sidebar-toggle">
+    <div class="sidebar-toggle-line-wrap">
+      <span class="sidebar-toggle-line sidebar-toggle-line-first"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-middle"></span>
+      <span class="sidebar-toggle-line sidebar-toggle-line-last"></span>
+    </div>
+  </div>
+
+  <aside id="sidebar" class="sidebar">
+    
+    <div class="sidebar-inner">
+
+      
+
+      
+        <ul class="sidebar-nav motion-element">
+          <li class="sidebar-nav-toc sidebar-nav-active" data-target="post-toc-wrap">
+            文章目录
+          </li>
+          <li class="sidebar-nav-overview" data-target="site-overview-wrap">
+            站点概览
+          </li>
+        </ul>
+      
+
+      <section class="site-overview-wrap sidebar-panel">
+        <div class="site-overview">
+          <div class="site-author motion-element" itemprop="author" itemscope itemtype="http://schema.org/Person">
+            
+              <img class="site-author-image" itemprop="image"
+                src="https://timgsa.baidu.com/timg?image&quality=80&size=b9999_10000&sec=1534345547319&di=b9e880681b19e0cefb3132f38ccb0281&imgtype=0&src=http%3A%2F%2Fimg.duoziwang.com%2F2017%2F09%2F1607450267817.jpg"
+                alt="HaolinZhong" />
+            
+              <p class="site-author-name" itemprop="name">HaolinZhong</p>
+              <p class="site-description motion-element" itemprop="description">find a way</p>
+          </div>
+
+          <nav class="site-state motion-element">
+
+            
+              <div class="site-state-item site-state-posts">
+              
+                <a href="/archives/">
+              
+                  <span class="site-state-item-count">14</span>
+                  <span class="site-state-item-name">日志</span>
+                </a>
+              </div>
+            
+
+            
+
+            
+
+          </nav>
+
+          
+
+          
+
+          
+          
+
+          
+          
+
+          
+
+        </div>
+      </section>
+
+      
+      <!--noindex-->
+        <section class="post-toc-wrap motion-element sidebar-panel sidebar-panel-active">
+          <div class="post-toc">
+
+            
+              
+            
+
+            
+              <div class="post-toc-content"><ol class="nav"><li class="nav-item nav-level-3"><a class="nav-link" href="#W1"><span class="nav-number">1.</span> <span class="nav-text">W1</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-机器学习的介绍"><span class="nav-number">1.1.</span> <span class="nav-text">1.机器学习的介绍</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#2-regression-case-study"><span class="nav-number">1.2.</span> <span class="nav-text">2.regression-case study</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-gradient-descent"><span class="nav-number">1.3.</span> <span class="nav-text">3.gradient descent</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#Hw1"><span class="nav-number">1.4.</span> <span class="nav-text">Hw1</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#W2"><span class="nav-number">2.</span> <span class="nav-text">W2</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#1-bias-and-variance"><span class="nav-number">2.1.</span> <span class="nav-text">1.bias and variance</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#3-logistic-regression"><span class="nav-number">2.2.</span> <span class="nav-text">3.logistic regression</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#W3"><span class="nav-number">3.</span> <span class="nav-text">W3</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#3-Anomaly-detection-异常检测"><span class="nav-number">3.1.</span> <span class="nav-text">3.Anomaly detection(异常检测)</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#W4"><span class="nav-number">4.</span> <span class="nav-text">W4</span></a><ol class="nav-child"><li class="nav-item nav-level-4"><a class="nav-link" href="#2-keras"><span class="nav-number">4.1.</span> <span class="nav-text">2.keras</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HW3"><span class="nav-number">4.2.</span> <span class="nav-text">HW3</span></a></li><li class="nav-item nav-level-4"><a class="nav-link" href="#HW4"><span class="nav-number">4.3.</span> <span class="nav-text">HW4</span></a></li></ol></li><li class="nav-item nav-level-3"><a class="nav-link" href="#W5"><span class="nav-number">5.</span> <span class="nav-text">W5</span></a></li><li class="nav-item nav-level-3"><a class="nav-link" href="#W6"><span class="nav-number">6.</span> <span class="nav-text">W6</span></a></li></ol></div>
+            
+
+          </div>
+        </section>
+      <!--/noindex-->
+      
+
+      
+
+    </div>
+  </aside>
+
+
+        
+      </div>
+    </main>
+
+    <footer id="footer" class="footer">
+      <div class="footer-inner">
+        <div class="copyright">&copy; <span itemprop="copyrightYear">2020</span>
+  <span class="with-love">
+    <i class="fa fa-user"></i>
+  </span>
+  <span class="author" itemprop="copyrightHolder">HaolinZhong</span>
+
+  
+</div>
+
+
+  <div class="powered-by">由 <a class="theme-link" target="_blank" href="https://hexo.io">Hexo</a> 强力驱动</div>
+
+
+
+  <span class="post-meta-divider">|</span>
+
+
+
+  <div class="theme-info">主题 &mdash; <a class="theme-link" target="_blank" href="https://github.com/iissnan/hexo-theme-next">NexT.Muse</a> v5.1.4</div>
+
+
+
+
+        
+
+
+
+
+
+
+
+        
+      </div>
+    </footer>
+
+    
+      <div class="back-to-top">
+        <i class="fa fa-arrow-up"></i>
+        
+      </div>
+    
+
+    
+
+  </div>
+
+  
+
+<script type="text/javascript">
+  if (Object.prototype.toString.call(window.Promise) !== '[object Function]') {
+    window.Promise = null;
+  }
+</script>
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery/index.js?v=2.1.3"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fastclick/lib/fastclick.min.js?v=1.0.6"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/jquery_lazyload/jquery.lazyload.js?v=1.9.7"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/velocity/velocity.ui.min.js?v=1.2.1"></script>
+  
+
+  
+  
+    <script type="text/javascript" src="/lib/fancybox/source/jquery.fancybox.pack.js?v=2.1.5"></script>
+  
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/utils.js?v=5.1.4"></script>
+
+  <script type="text/javascript" src="/js/src/motion.js?v=5.1.4"></script>
+
+
+
+  
+  
+
+  
+  <script type="text/javascript" src="/js/src/scrollspy.js?v=5.1.4"></script>
+<script type="text/javascript" src="/js/src/post-details.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  <script type="text/javascript" src="/js/src/bootstrap.js?v=5.1.4"></script>
+
+
+
+  
+
+
+  
+
+
+
+
+	
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+
+
+
+
+
+
+
+
+
+
+
+  
+
+
+
+
+
+  
+
+  
+
+  
+
+  
+  
+
+  
+
+  
+
+  
+
+</body>
+</html>
